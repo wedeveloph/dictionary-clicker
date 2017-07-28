@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+@keyframes dictionary-roll {
+	from {background-position: 0 0;}
+	to {background-position: -10000px 5000px;}
+}
+
+@keyframes title {
+	0% {background-color: #FF0000;}
+	25%	{background-color: #FFFF00;}
+	50%	{background-color: #00FF00;}
+	75% {background-color: #00FFFF;}
+	100% {background-color: #0000FF;}
+}
+
+@keyframes keith-roll {
+	from {background-position: -10000px 5000px;}
+	to {background-position: 0 0;}
+}
+
+body {
+	margin: 0;
+	font-family: 'Oxygen', 'Helvetica';
+}
+
+body.scroll-dictionaries {
+	z-index: 0;
+	background: transparent url("images/dictionary_icon.png") repeat top center;
+	background-size: 100px 100px;
+	animation: dictionary-roll 200s linear infinite;
+}
+
+body.weird-colors {
+	animation: title 4s infinite alternate;
+}
+
+body.scroll-keith {
+	z-index: 0;
+	background: transparent url("images/keith.jpg") repeat top center;
+	background-size: 100px 100px;
+	animation: keith-roll 200s linear infinite;
+}
+
+@keyframes pulse_animation {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.05);}
+	100% {transform: scale(1);}
+}
+
+#dictionary {
+	width: 300;
+	height: 300;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+.pulse:not(:active) {
+	animation-name: pulse_animation;
+	animation-duration: 500ms;
+	transform-origin:70% 70%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#total {
+	font-size: 40px;
+	margin-top: 100px;
+	text-shadow: 1px 1px 15px #ccc;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+#rate {
+	font-size: 24px;
+	margin-top:.5em;
+	text-shadow: 1px 1px 15px #ccc;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+#store {
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+button.item {
+	background-color: #FFFFFF;
+	color: #003377;
+	font-size: 32;
+	font-weight: bold;
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	padding: 10px;
+	border: 0;
+	border-radius: 50px;
+}
+
+button.dark {
+	background-color: #AAAAAA;
+}
+
+button.item:hover {
+	background-color: #00DDAA;
+}
+
+img.item_icon {
+	width: 130;
+	height: 130;
+	float: left;
+	margin: 0px 50px;
+}
+
+.item_info {
+	float: left;
+	text-align: left;
+}
+
+.item_label {
+	font-size: 24;
+}
+
+.item_desc {
+	font-size: 18;
+	color: #555555;
+}
+
+.item_price {
+	font-size: 18;
+	color: #5555AA;
+}
