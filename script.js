@@ -60,15 +60,15 @@ function purchase_item(item) {
 function update_display() {
 	// Updates total dictionary count
 	if(clicks == 1) {
-		$("#total").text(clicks+" dictionary") // Gotta keep grammar on point
+		$("#total").text(clicks.toLocaleString()+" dictionary") // Gotta keep grammar on point
 	}
 	else {
-		$("#total").text(clicks+" dictionaries")
+		$("#total").text(clicks.toLocaleString()+" dictionaries")
 	}
 
 	// Updates color of buttons depending on availability
 	for(i = 0; i < items.length; i++) {
-		$("."+items[i].name+".item_price").text("Costs "+items[i].cost+" dictionaries.")
+		$("."+items[i].name+".item_price").text("Costs "+items[i].cost.toLocaleString()+" dictionaries.")
 
 		if(clicks < items[i].cost) {
 			$("#"+items[i].name).addClass("dark")
@@ -99,7 +99,7 @@ function auto_increment() {
 	clicks += auto_rate
 	update_display()
 	
-	$("#rate").text("per second: " + ((clicks_per_second*click_rate)+auto_rate))
+	$("#rate").text("per second: " + ((clicks_per_second*click_rate)+auto_rate).toLocaleString())
 	clicks_per_second = 0
 }
 
